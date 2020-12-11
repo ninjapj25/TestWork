@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Nav } from "reactstrap";
 
-function App() {
+import SideNav from "./components/navs/SideNav";
+import TopNav from "./components/navs/TopNav";
+
+export default function App() {
+  const data = [
+    {
+      name: "cloud",
+      placement: "left",
+    },
+    {
+      name: "favorite",
+      placement: "left",
+    },
+    {
+      name: "attachment",
+      placement: "left",
+    },
+    {
+      name: "computer",
+      placement: "left",
+    },
+    {
+      name: "traffic",
+      placement: "left",
+    },
+    {
+      name: "traffic",
+      placement: "left",
+    },
+    {
+      name: "traffic",
+      placement: "left",
+    },
+    {
+      name: "traffic",
+      placement: "left",
+    },
+    {
+      name: "traffic",
+      placement: "left",
+    },
+    {
+      name: "traffic",
+      placement: "left",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TopNav />
+      <Nav vertical={true} className="sideNav">
+        {data.map((item, i) => (
+          <SideNav key={i} item={item} id={i} />
+        ))}
+      </Nav>
     </div>
   );
 }
-
-export default App;
